@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [ "$1" = "qs" ]; then
+rm "$2"
+fi
+exec /usr/bin/ar "$@"

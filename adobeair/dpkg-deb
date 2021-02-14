@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$1" = "-b" ]; then
+DIR="$2/DEBIAN"
+if [ -L "$DIR" ]; then
+DEST=`readlink "$DIR"`
+rm -Rf "$DIR"
+cp -R "$DEST" "$DIR"
+fi
+fi
+/usr/bin/dpkg-deb "$@"
